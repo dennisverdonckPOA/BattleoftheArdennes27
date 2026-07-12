@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle of the Ardennes 2027</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap');
+        body { font-family: 'Roboto', sans-serif; background-color: #0f172a; color: #f1f5f9; }
+        .title-font { font-family: 'Bebas Neue', cursive; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease-in; }
+        .nav-active { background-color: #facc15 !important; color: #1e3a8a !important; font-weight: 800; border-bottom: 4px solid #1e3a8a; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="pb-24">
+
+    <!-- Header -->
+    <header class="bg-blue-950 text-white p-6 shadow-2xl sticky top-0 z-50 border-b-4 border-yellow-500">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl title-font tracking-widest leading-none text-white">Battle of the Ardennes</h1>
+            <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-yellow-400 mt-2">15 – 16 MEI 2027</p>
+        </div>
+    </header>
+
+    <!-- Navigatie -->
+    <nav class="bg-blue-900 sticky top-[96px] z-40 flex overflow-x-auto no-scrollbar shadow-xl border-b border-blue-800">
+        <button onclick="showTab('info', this)" class="nav-btn nav-active px-5 py-4 text-[10px] font-bold uppercase flex-shrink-0 transition-all border-r border-blue-950"><i class="fas fa-info-circle mr-2"></i>Info</button>
+        <button onclick="showTab('plan', this)" class="nav-btn px-5 py-4 text-[10px] font-bold uppercase flex-shrink-0 transition-all border-r border-blue-950 text-white"><i class="fas fa-calendar-alt mr-2"></i>Planning</button>
+        <button onclick="showTab('team', this)" class="nav-btn px-5 py-4 text-[10px] font-bold uppercase flex-shrink-0 transition-all border-r border-blue-950 text-white"><i class="fas fa-users mr-2"></i>Team</button>
+        <button onclick="showTab('loc', this)" class="nav-btn px-5 py-4 text-[10px] font-bold uppercase flex-shrink-0 transition-all border-r border-blue-950 text-white"><i class="fas fa-map-marked-alt mr-2"></i>Locaties</button>
+        <button onclick="showTab('fin', this)" class="nav-btn px-5 py-4 text-[10px] font-bold uppercase flex-shrink-0 transition-all border-r border-blue-950 text-white"><i class="fas fa-euro-sign mr-2"></i>Budget</button>
+        <button onclick="showTab('pack', this)" class="nav-btn px-5 py-4 text-[10px] font-bold uppercase flex-shrink-0 transition-all text-white"><i class="fas fa-suitcase-rolling mr-2"></i>Inpak</button>
+    </nav>
+
+    <main class="max-w-4xl mx-auto p-4">
+
+        <!-- TAB: INFO -->
+        <section id="info" class="tab-content active space-y-4">
+            <div class="bg-slate-800 p-6 rounded-xl shadow-sm border-l-8 border-yellow-500">
+                <h2 class="text-2xl title-font text-white mb-4">Waarom?</h2>
+                <ul class="text-sm space-y-3 text-slate-300 font-medium italic">
+                    <li><i class="fas fa-basketball-ball text-yellow-500 mr-2"></i> Meten met goede ploegen</li>
+                    <li><i class="fas fa-star text-yellow-500 mr-2"></i> Ervaring om nooit te vergeten</li>
+                    <li><i class="fas fa-users text-yellow-500 mr-2"></i> Teambuilding</li>
+                    <li><i class="fas fa-trophy text-yellow-500 mr-2"></i> Afsluiter van het seizoen</li>
+                </ul>
+            </div>
+            <div class="bg-blue-950 text-white p-4 rounded-xl shadow text-center border border-blue-800">
+                <p class="text-[10px] opacity-70 uppercase font-bold tracking-widest">Wedstrijden</p>
+                <p class="text-lg font-bold">In principe 5-tal matchen</p>
+            </div>
+        </section>
+
+        <!-- TAB: PLANNING -->
+        <section id="plan" class="tab-content space-y-4">
+            <h2 class="text-xl title-font text-white mb-2 border-b-2 border-yellow-500 inline-block">Dagplanning</h2>
+            <div class="bg-slate-800 p-5 rounded-xl shadow border-l-8 border-slate-500">
+                <h3 class="font-bold text-white uppercase text-sm mb-2">14 Mei</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">• <i class="fas fa-door-open mr-2"></i> Aankomst jeugdherberg<br>• <i class="fas fa-utensils mr-2"></i> Avondmaal + uitpakken<br>• <i class="fas fa-glass-cheers mr-2"></i> Ontspanning bar/Namen + slapen</p>
+            </div>
+            <div class="bg-slate-800 p-5 rounded-xl shadow border-l-8 border-orange-500">
+                <h3 class="font-bold text-white uppercase text-sm mb-2">15 Mei</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">• <i class="fas fa-coffee mr-2"></i> Ontbijt jeugdherberg<br>• <i class="fas fa-bus mr-2"></i> Verplaatsen naar Profondeville<br>• <i class="fas fa-pizza-slice mr-2"></i> Middaglunch (ter plekke of winkel)<br>• <i class="fas fa-shower mr-2"></i> Douche (sporthal/verblijf)<br>• <i class="fas fa-moon mr-2"></i> Ontspanning/Bar + slapen</p>
+            </div>
+            <div class="bg-slate-800 p-5 rounded-xl shadow border-l-8 border-blue-500">
+                <h3 class="font-bold text-white uppercase text-sm mb-2">16 Mei</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">• <i class="fas fa-box-open mr-2"></i> Ontbijt + Alles inpakken<br>• <i class="fas fa-bus mr-2"></i> Verplaatsen naar Profondeville<br>• <i class="fas fa-futbol mr-2"></i> Finales (of klaar rond 14-15u)</p>
+            </div>
+        </section>
+
+        <!-- TAB: TEAM & KAMERS -->
+        <section id="team" class="tab-content space-y-4">
+            <h2 class="text-xl title-font text-white"><i class="fas fa-users mr-2"></i>Wie & Kamers</h2>
+            <div class="bg-slate-800 p-4 rounded-xl shadow border-t-4 border-blue-500">
+                <h3 class="text-[10px] font-bold text-blue-300 uppercase mb-2">Deelnemers</h3>
+                <p class="text-xs text-slate-200 mb-1"><b>Coach:</b> Kevin</p>
+                <p class="text-xs text-slate-200 mb-1"><b>Spelers:</b> Arne, Lukas, Dean, Vik, Mauro, Arjen, Tayten, Sepp, Jayden, Jordan, Wietse, Jacques</p>
+                <p class="text-xs text-slate-200"><b>Ouders:</b> Lesley, Chien, Chiu Sik, Dennis</p>
+            </div>
+            <div class="bg-slate-900 text-white p-4 rounded-xl shadow border border-slate-700">
+                <h3 class="text-[10px] font-bold uppercase mb-3 text-yellow-400"><i class="fas fa-bed mr-2"></i>Kamerverdeling</h3>
+                <div class="text-[11px] space-y-2 text-slate-300">
+                    <p><i class="fas fa-key mr-2"></i> 1: Kevin | 2: Dennis | 3: Lesley | 4: Chien / Chiu Sik</p>
+                    <p><i class="fas fa-key mr-2"></i> 5: Lukas / Dean / Vik</p>
+                    <p><i class="fas fa-key mr-2"></i> 6: Mauro / Arjen / Tayten / Jacques</p>
+                    <p><i class="fas fa-key mr-2"></i> 7: Jayden / Jordan / Sepp</p>
+                    <p><i class="fas fa-key mr-2"></i> 8: Arne / Wietse</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB: LOCATIES -->
+        <section id="loc" class="tab-content space-y-4">
+            <h2 class="text-xl title-font text-white"><i class="fas fa-map-marker-alt mr-2"></i>Locaties</h2>
+            <div class="bg-slate-800 p-4 rounded-xl shadow space-y-3 text-[11px] text-slate-200">
+                <p><b>Verblijf:</b> <a href="https://www.google.com/maps/search/?api=1&query=Avenue+F%C3%A9licien+Rops+8+5000+Namur" target="_blank" class="text-blue-400 underline font-bold"><i class="fas fa-bed mr-1"></i> Avenue Félicien Rops 8, 5000 Namen</a></p>
+                <p><b>Basketcomplex:</b> <a href="https://www.google.com/maps/search/?api=1&query=Av.+Roquebrune+Cap+Martin+27/43+5170+Profondeville" target="_blank" class="text-blue-400 underline font-bold"><i class="fas fa-basketball-ball mr-1"></i> Av. Roquebrune Cap Martin 27/43, Profondeville</a></p>
+                <p><b>ALDI:</b> <a href="https://www.google.com/maps/search/?api=1&query=Ancien+Rivage+70+5020+Malonne" target="_blank" class="text-blue-400 underline font-bold"><i class="fas fa-shopping-cart mr-1"></i> Ancien Rivage 70, Malonne</a></p>
+                <p><b>LIDL:</b> <a href="https://www.google.com/maps/search/?api=1&query=Rue+Riverre+112+5150+Floreffe" target="_blank" class="text-blue-400 underline font-bold"><i class="fas fa-shopping-cart mr-1"></i> Rue Riverre 112, Floreffe</a></p>
+                <p><b>Bakker:</b> <a href="https://www.google.com/maps/search/?api=1&query=Chau.+de+Dinant+27+5170+Profondeville" target="_blank" class="text-blue-400 underline font-bold"><i class="fas fa-bread-slice mr-1"></i> Chau. de Dinant 27, Profondeville</a></p>
+                <p><b>Ziekenhuis:</b> <a href="https://www.google.com/maps/search/?api=1&query=Rue+Dr+Gaston+Therasse+1+5530+Yvoir" target="_blank" class="text-red-400 underline font-bold"><i class="fas fa-hospital mr-1"></i> Rue Dr Gaston Therasse 1, Yvoir</a></p>
+            </div>
+        </section>
+
+        <!-- TAB: BUDGET -->
+        <section id="fin" class="tab-content space-y-4">
+            <h2 class="text-xl title-font text-white"><i class="fas fa-wallet mr-2"></i>Financieel</h2>
+            <div class="bg-blue-950 text-white p-6 rounded-xl shadow-lg text-center border border-blue-800">
+                <p class="text-[10px] uppercase font-bold opacity-70">Totaal bedrag (17p)</p>
+                <h3 class="text-3xl font-black text-yellow-400">€ 2.204,60</h3>
+                <p class="text-xs opacity-80 mt-2">Per persoon: <b>€ 129,68</b></p>
+            </div>
+            <div class="bg-slate-800 p-4 rounded-xl shadow text-[11px] text-slate-300">
+                <p><i class="fas fa-hotel mr-2"></i> Verblijf: € 1630,00</p>
+                <p><i class="fas fa-utensils mr-2"></i> Halfpension: € 574,60</p>
+                <p class="mt-2 pt-2 border-t border-slate-600 font-bold text-blue-300"><i class="fas fa-ticket-alt mr-2"></i> Inschrijvingsgeld: € 30,00 p.p. (incl. T-shirt)</p>
+            </div>
+        </section>
+
+        <!-- TAB: INPAKLIJST -->
+        <section id="pack" class="tab-content space-y-4">
+            <h2 class="text-xl title-font text-white"><i class="fas fa-suitcase-rolling mr-2"></i>Inpaklijst</h2>
+            <div class="bg-slate-800 rounded-xl shadow p-4">
+                <h3 class="text-[10px] font-bold text-yellow-400 uppercase mb-3">Voor IEDER</h3>
+                <div class="grid grid-cols-1 gap-2 text-[11px] text-slate-200">
+                    <label><i class="fas fa-id-card w-5 text-blue-400"></i> ID!!!!!!</label>
+                    <label><i class="fas fa-bed w-5 text-blue-400"></i> Pyjama</label>
+                    <label><i class="fas fa-pills w-5 text-blue-400"></i> Persoonlijke medicatie</label>
+                    <label><i class="fas fa-plug w-5 text-blue-400"></i> Oplader GSM</label>
+                    <label><i class="fas fa-tshirt w-5 text-blue-400"></i> Kledij (algemeen + slecht weer)</label>
+                    <label><i class="fas fa-shower w-5 text-blue-400"></i> Douchegerief</label>
+                    <label><i class="fas fa-bath w-5 text-blue-400"></i> Badhanddoek (min. 2x)</label>
+                    <label><i class="fas fa-tooth w-5 text-blue-400"></i> Tandenborstel en tandpasta</label>
+                    <label><i class="fas fa-bottle-water w-5 text-blue-400"></i> Drinkbus</label>
+                    <label><i class="fas fa-spray-can w-5 text-blue-400"></i> Deo</label>
+                    <label><i class="fas fa-shoe-prints w-5 text-blue-400"></i> Slippers</label>
+                    <label><i class="fas fa-sun w-5 text-blue-400"></i> Zonnecreme</label>
+                    <label><i class="fas fa-tablets w-5 text-blue-400"></i> Dafalgan</label>
+                    <label><i class="fas fa-socks w-5 text-blue-400"></i> Basketbalsokken (2x)</label>
+                    <label><i class="fas fa-utensils w-5 text-blue-400"></i> Energiebar/-snack</label>
+                    <label><i class="fas fa-wallet w-5 text-blue-400"></i> Budget voor drankjes</label>
+                </div>
+            </div>
+            <div class="bg-slate-950 text-white rounded-xl shadow p-4 text-[11px] border border-slate-700">
+                <h3 class="text-yellow-400 font-bold uppercase mb-2">Voor de CLUB</h3>
+                <ul class="space-y-2">
+                    <li><i class="fas fa-briefcase-medical w-5 text-green-400"></i> EHBO-kit</li>
+                    <li><i class="fas fa-tshirt w-5 text-green-400"></i> 2x Basketbaltenues!!</li>
+                    <li><i class="fas fa-basketball-ball w-5 text-green-400"></i> Basketballen (opwarming)</li>
+                    <li><i class="fas fa-copy w-5 text-green-400"></i> Kopie ID's (spelers zonder ouders)</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="fixed bottom-0 left-0 right-0 bg-blue-950 text-white p-3 text-[9px] text-center font-bold tracking-widest border-t-2 border-yellow-500">
+        BATTLE OF THE ARDENNES 2027
+    </footer>
+
+    <script>
+        function showTab(tabId, btn) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => { b.classList.remove('nav-active'); });
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('nav-active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
