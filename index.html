@@ -56,6 +56,11 @@
                     <li><i class="fas fa-trophy text-yellow-500 mr-2"></i> Afsluiter van het seizoen</li>
                 </ul>
             </div>
+
+            <!-- Agenda Knop -->
+            <button onclick="downloadAgenda()" class="w-full bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold py-3 px-4 rounded-xl shadow-lg transform transition active:scale-95 flex items-center justify-center">
+                <i class="fas fa-calendar-plus mr-3 text-xl"></i> Voeg het toernooi toe aan je agenda
+            </button>
             
             <div class="max-w-md mx-auto mt-6 aspect-video w-full rounded-xl overflow-hidden shadow-lg border border-slate-700">
                 <iframe class="w-full h-full" src="https://www.youtube.com/embed/Wm9cj9ZFS0A?si=zqK-vBwQCsMMzuuu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -243,6 +248,39 @@
             document.getElementById(tabId).classList.add('active');
             btn.classList.add('nav-active');
             window.scrollTo(0, 0);
+        }
+
+        function downloadAgenda() {
+            const icalContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Battle of the Ardennes//NONSGML v1.0//NL
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:${Date.now()}1@battleoftheardennes.be
+DTSTART:20270514T180000
+DTEND:20270516T100000
+SUMMARY:Verblijf Auberge de Jeunesse de Namur
+LOCATION:Avenue Félicien Rops 8, 5000 Namen
+DESCRIPTION:Verblijf tijdens Battle of the Ardennes U16A.
+END:VEVENT
+BEGIN:VEVENT
+UID:${Date.now()}2@battleoftheardennes.be
+DTSTART:20270515T100000
+DTEND:20270516T160000
+SUMMARY:Locatie sporthal - Battle of the Ardennes U16A
+LOCATION:Av. Roquebrune Cap Martin 27/43, Profondeville
+DESCRIPTION:
+END:VEVENT
+END:VCALENDAR`.replace(/\n/g, '\r\n');
+
+            const blob = new Blob([icalContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'toernooi_agenda.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>
